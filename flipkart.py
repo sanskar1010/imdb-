@@ -26,4 +26,5 @@ for i in range(1,pages+1):
         d['Battery']=table_rows[3].get_text()
         d['Processor']=table_rows[4].get_text().split(' ')[0].strip()
         flipkart.append(d)
-    print(flipkart)
+    my_data=pd.json_normalize(flipkart)
+    my_data.to_excel('FLIPKART_PHONES.xlsx',index=False)
